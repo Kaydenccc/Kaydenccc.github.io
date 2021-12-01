@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Montserrat&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Tangerine:wght@400;700&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+/* Break Point */
+@media screen and (min-width: 375px) {
+  .bungkus {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .bungkus.bungkus-active {
+    height: max-content;
+    width: 100%;
+    overflow: visible;
+  }
+  .section-one {
+    z-index: 1000;
+    position: absolute;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    background-image: url('../image/wed.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+  }
+  .section-one.active {
+    opacity: 0;
+  }
+  section.section-one .overlay {
+    width: 100%;
+    /* height: max-content; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section.section-one .overlay .kata-one {
+    color: aliceblue;
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  section.section-one .overlay .kata-one h3 {
+    top: 7%;
+    position: absolute;
+    font-size: 1rem;
+    letter-spacing: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+  }
+  section.section-one .overlay .kata-one h2 {
+    font-family: 'Tangerine', cursive;
+    position: absolute;
+    top: 25%;
+    font-weight: 700;
+    font-size: 4rem;
+  }
+  section.section-one .overlay .kata-one p {
+    font-size: 1rem;
+    top: 60%;
+    position: absolute;
+    width: 80%;
+  }
+  section.section-one .overlay .kata-one .description-one {
+    position: absolute;
+    top: 50%;
+  }
+  section.section-one .overlay .kata-one .description-two {
+    font-weight: 900;
+    margin-bottom: 10px;
+    top: 56%;
+    position: absolute;
+    font-size: 1rem;
+  }
+  section.section-one .overlay .kata-one a {
+    width: 90%;
+    text-decoration: none;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.5);
+    padding: 10px 50px;
+    text-transform: uppercase;
+    font-weight: 300;
+    border-radius: 40px;
+    letter-spacing: 2px;
+    background: aliceblue;
+    position: absolute;
+    bottom: 10%;
+    border: none;
+  }
+  section.section-one .overlay2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* mix-blend-mode: overlay; */
+  }
+  .container {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    z-index: -10;
+  }
+  .container .section-cover {
+    display: flex;
+    /* opacity: 0.7; */
+    background-image: url('../image/duotone.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .container .main {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: rgba(0, 0, 0, 0.5);
+    color: rgb(37, 29, 13);
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container .main .the-wedding {
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: all 0.5s ease-out;
+  }
+  .container .main .the-wedding h3 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    color: aliceblue;
+    letter-spacing: 10px;
+  }
+  .container .main .the-wedding-middle {
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all 1s ease-out;
+  }
+  .container .main .the-wedding-middle h2 {
+    font-family: 'Tangerine', cursive;
+    color: aliceblue;
+    font-weight: 900;
+    text-align: center;
+    font-size: 6rem;
+    letter-spacing: 5px;
+  }
+  .container .main .the-wedding-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.5s ease-out;
+  }
+  .container .main .the-wedding-bottom > * {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    border-right: 5px solid hotpink;
+  }
+  .container .main .the-wedding-bottom h3:last-child {
+    border-right: none;
+  }
+  .container .main .the-wedding-bottom h3:nth-child(2) {
+    text-align: center;
+  }
+
+  .container .main .the-wedding.intro-appear {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  .container .main .the-wedding-middle.intro-appear2 {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  .container .main .the-wedding-bottom.intro-appear3 {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  .section-two {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    /* padding: 0 20px; */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .section-two .bismillah {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: -50px;
+    opacity: 0;
+    margin: 0 20px;
+    text-align: center;
+    font-size: 0.8em;
+    transition: all 1s ease-in-out;
+  }
+  .section-two .bismillah.bismillah-active {
+    top: 0px;
+    opacity: 1;
+  }
+  .section-two .bismillah h1 {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .section-two .bismillah p:nth-child(2) {
+    font-weight: 900;
+  }
+  .section-two .image {
+    display: flex;
+    position: relative;
+    top: -5%;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    /* padding: 0 30px; */
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.5rem;
+  }
+
+  .section-two .image .image-one {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    font-size: 1rem;
+    /* justify-content: flex-end; */
+    align-items: center;
+    flex-direction: column;
+    line-height: 2;
+    /* padding: 50px 30px; */
+  }
+  .container .section-two .image .image-one .bks {
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border: 5px solid hotpink;
+    align-items: center;
+    margin-bottom: 5em;
+    height: 100px;
+    width: 100px;
+    transform: rotate(45deg);
+    transition: all 1s ease-in-out;
+    overflow: hidden;
+  }
+  .container .section-two .image .image-one .bks img {
+    position: relative;
+    height: auto;
+    width: 200px;
+    left: 0;
+    top: 0;
+  }
+  .section-two .image .image-one .bks.one {
+    left: -100px;
+    opacity: 0;
+  }
+  .section-two .image .image-one .bks.two {
+    right: -100px;
+    opacity: 0;
+  }
+  .section-two .image .image-one .bks.one.muncul1 {
+    left: 0px;
+    opacity: 1;
+  }
+  .section-two .image .image-one .bks.two.muncul2 {
+    right: 0px;
+    opacity: 1;
+  }
+  .bungkus .container .section-two .image .image-one .katak {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    display: flex;
+    font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 2;
+    font-weight: bolder;
+    transition: all 1s ease-in-out;
+  }
+  .bungkus .container .section-two .image .image-one .katak h2 {
+    font-size: 2rem;
+  }
+  .bungkus .container .section-two .image .image-one .katak p {
+    font-size: 0.63rem;
+    font-weight: 600;
+  }
+  .section-two .image .image-one .katak.kata-1 {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  .section-two .image .image-one .katak.kata-2 {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  .section-two .image .image-one .katak.kata-1.kata-active {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  .section-two .image .image-one .katak.kata-2.kata-active {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  .section-two .image .image-one h2 {
+    font-size: 4rem;
+    font-family: 'Tangerine', cursive;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: hotpink;
+  }
+  /* .section-two .image .image-one .bks .border {
+    /* position: absolute; */
+  /* border: 2px solid #ccc; */
+  /* } */
+  .section-two .image .image-one .bks img {
+    position: relative;
+    width: 100% / 2;
+    height: 420px;
+    transform: rotate(-45deg);
+  }
+
+  /* css section-comment */
+  svg {
+    position: relative;
+    left: 0;
+    bottom: -5px;
+  }
+  .section-comment {
+    background-color: rgb(54, 48, 48);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+  }
+  .section-comment .kotak-komen {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .section-comment .kotak-komen .c h2 {
+    width: 100%;
+    font-size: 3rem;
+    margin-bottom: 5rem;
+    font-family: 'Tangerine', cursive;
+    letter-spacing: 5px;
+  }
+  .section-comment .kotak-komen form {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .section-comment .kotak-komen form .input,
+  textarea {
+    width: 90%;
+  }
+  .section-comment .kotak-komen form .input input {
+    width: 100%;
+    height: 20px;
+    /* font-size: 0.1rem; */
+  }
+  .section-comment .kotak-komen form textarea {
+    margin: 12px 0 12px 0;
+  }
+  .section-comment .kotak-komen form textarea,
+  .input input {
+    padding: 20px;
+    font-size: 1rem;
+    color: rgb(140, 125, 125);
+    border-radius: 8px;
+  }
+  .section-comment .kotak-komen form textarea:focus,
+  .input input:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px 5px hotpink;
+  }
+  .section-comment .kotak-komen form textarea::placeholder,
+  .input input::placeholder {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+  }
+  .section-comment .kotak-komen form button {
+    min-width: 90%;
+    padding: 5px 30px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+
+  /* css comennt items */
+  .comment-here {
+    height: 500px;
+    overflow-y: scroll;
+    width: 90%;
+    border: solid 1px #fff;
+    margin: 30px 0;
+    border-radius: 8px;
+  }
+  .comment-here .items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    /* border-bottom: 1px solid aliceblue; */
+  }
+  .comment-here .items .img {
+    width: 80px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .comment-here .items .img .image {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    margin: 20px;
+    border-bottom: 1px solid aliceblue;
+  }
+  .comment-here .items .kotak-komen {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    font-size: 1rem;
+    border-bottom: 1px solid aliceblue;
+    padding: 0 0 10px 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 70px;
+    width: 100%;
+  }
+  .comment-here .items .kotak-komen h5 {
+    font-size: 1rem;
+  }
+  footer {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1rem;
+  }
+}
